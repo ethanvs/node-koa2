@@ -6,10 +6,6 @@ const HomeController = require('../controller/home')
 module.exports = (app) => {
     router.get('/', HomeController.index)
 
-    router.get('/home', HomeController.home)
-
-    router.get('/home/:id/:name', HomeController.homeParams)
-
     router.get('/user', HomeController.login)
 
     router.post('/user/doLogin', HomeController.doLogin)
