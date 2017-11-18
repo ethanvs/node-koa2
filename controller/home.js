@@ -14,15 +14,9 @@ module.exports = {
         ctx.response.body = '<h1>Home Page /:id/:name'
     },
     login: async(ctx, next) => {
-        ctx.response.body = `
-            <form action="/user/doLogin" method="post">
-                <input name="name" type="text" placeholder="请输入用户名: test">
-                <br>
-                <input name="password" password="text" placeholder="请输入密码: 123">
-                <br>
-                <button>提交</button>
-            </form>
-        `
+        await ctx.render('home/login', {
+            btnName: '开始你的表演'
+        })
     },
     doLogin: async(ctx, next) => {
         let {name,password} = ctx.request.body
