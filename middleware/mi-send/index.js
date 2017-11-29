@@ -5,7 +5,6 @@ module.exports = () => {
     }
     return async (ctx, next) => {
         ctx.send = render.bind(ctx)
-        ctx.log.error('错误日志实例');
         await next()
     }
 }
